@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header>
+        <h1>Malla Curricular Interactiva</h1>
+        <p>Ingeniería de Software (Ejemplo)</p>
+    </header>
+
+    <main id="malla-curricular-container">
+        <div class="semestre">
+            <h2>Semestre I</h2>
+            <div class="asignatura" data-sigla="MAT-101" data-creditos="5" data-prerrequisitos='[]'>
+                <span class="sigla">MAT-101</span>
+                <p class="nombre">Cálculo I</p>
+                <span class="creditos">5 Créditos</span>
+            </div>
+            <div class="asignatura" data-sigla="FIS-100" data-creditos="4" data-prerrequisitos='[]'>
+                <span class="sigla">FIS-100</span>
+                <p class="nombre">Física General</p>
+                <span class="creditos">4 Créditos</span>
+            </div>
+            <div class="asignatura" data-sigla="PRO-101" data-creditos="5" data-prerrequisitos='[]'>
+                <span class="sigla">PRO-101</span>
+                <p class="nombre">Introducción a la Programación</p>
+                <span class="creditos">5 Créditos</span>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre II</h2>
+            <div class="asignatura" data-sigla="MAT-102" data-creditos="5" data-prerrequisitos='["MAT-101"]'>
+                <span class="sigla">MAT-102</span>
+                <p class="nombre">Cálculo II</p>
+                <span class="creditos">5 Créditos</span>
+            </div>
+            <div class="asignatura" data-sigla="PRO-102" data-creditos="5" data-prerrequisitos='["PRO-101"]'>
+                <span class="sigla">PRO-102</span>
+                <p class="nombre">Programación Orientada a Objetos</p>
+                <span class="creditos">5 Créditos</span>
+            </div>
+            <div class="asignatura" data-sigla="EBD-101" data-creditos="4" data-prerrequisitos='["PRO-101"]'>
+                <span class="sigla">EBD-101</span>
+                <p class="nombre">Estructura de Datos</p>
+                <span class="creditos">4 Créditos</span>
+            </div>
+        </div>
+        
+        <div class="semestre">
+            <h2>Semestre III</h2>
+            <div class="asignatura" data-sigla="MAT-203" data-creditos="5" data-prerrequisitos='["MAT-102"]'>
+                <span class="sigla">MAT-203</span>
+                <p class="nombre">Ecuaciones Diferenciales</p>
+                <span class="creditos">5 Créditos</span>
+            </div>
+            <div class="asignatura" data-sigla="BBD-201" data-creditos="5" data-prerrequisitos='["EBD-101"]'>
+                <span class="sigla">BBD-201</span>
+                <p class="nombre">Bases de Datos</p>
+                <span class="creditos">5 Créditos</span>
+            </div>
+             <div class="asignatura" data-sigla="ARC-201" data-creditos="4" data-prerrequisitos='["PRO-102"]'>
+                <span class="sigla">ARC-201</span>
+                <p class="nombre">Arquitectura de Computadores</p>
+                <span class="creditos">4 Créditos</span>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre IV</h2>
+            <div class="asignatura" data-sigla="SIS-202" data-creditos="5" data-prerrequisitos='["BBD-201", "PRO-102"]'>
+                <span class="sigla">SIS-202</span>
+                <p class="nombre">Sistemas de Información</p>
+                <span class="creditos">5 Créditos</span>
+            </div>
+            <div class="asignatura" data-sigla="RED-201" data-creditos="4" data-prerrequisitos='["ARC-201"]'>
+                <span class="sigla">RED-201</span>
+                <p class="nombre">Redes de Computadores</p>
+                <span class="creditos">4 Créditos</span>
+            </div>
+            <div class="asignatura" data-sigla="SO-201" data-creditos="5" data-prerrequisitos='["ARC-201"]'>
+                <span class="sigla">SO-201</span>
+                <p class="nombre">Sistemas Operativos</p>
+                <span class="creditos">5 Créditos</span>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="modal-asignatura" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+            <h2 id="modal-titulo">Título de la Asignatura</h2>
+            <p><strong>Sigla:</strong> <span id="modal-sigla"></span></p>
+            <p><strong>Créditos:</strong> <span id="modal-creditos"></span></p>
+            <hr>
+            <p><strong>Prerrequisitos:</strong></p>
+            <ul id="modal-prerrequisitos">
+                </ul>
+            <button id="btn-aprobar" class="btn-aprobar">Marcar como Aprobada</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
